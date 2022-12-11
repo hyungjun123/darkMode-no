@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>File</title>
+    <script>
+   
+    
+    window.addEventListener("load",function(){
+        const fileInput = document.getElementById("file-input");
+        const fileName = document.getElementById("file");
+        const button =  document.getElementById("button");
+        fileInput.addEventListener("change",function(){
+            
+        for (const file of fileInput.files) {
+        console.log(file.name);
+        fileName.innerHTML += '<li>' + file.name + '</li>'
+        }
+
+        });
+
+        
+        window.localStorage.setItem("dark",button.addEventListener)
+        const dark = localStorage.getItem("dark")
+        console.log(localStorage.setItem)
+        console.log(localStorage.getItem)
+
+            
+
+        
+        let number = 0;
+        let result = 0;
+        button.addEventListener("click",function(){
+        number = number + 1;
+        result = number%2;
+        
+        if(result==1){
+        const dark = localStorage.getItem("dark")
+        document.body.style.backgroundColor="black"
+        document.body.style.color="white"
+        
+        }
+        if(result==0){
+        const dark = localStorage.getItem("dark")
+        document.body.style.backgroundColor="white"
+        document.body.style.color="black"
+        
+        }
+    
+        
+        })
+        
+    });
+   
+    
+    
+    
+    
+    
+
+    </script>
+</head>
+<body>
+    <input 
+    type="file"
+    multiple
+    id="file-input">
+    <br>
+    <li id="file"></li>
+    <br/>    
+    <button id="button">다크모드 크기/켜기</button>
+</body>
+</html>
